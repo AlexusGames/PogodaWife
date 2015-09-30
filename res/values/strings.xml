@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PogodaWife</string>
+    <string name="celsy">° C</string>
+    <string name="default_temperature">--- ° C</string>
+    <string name="town">Tomsk</string>
+    <!-- <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    
+    <string name=""></string> -->
+
+</resources>
