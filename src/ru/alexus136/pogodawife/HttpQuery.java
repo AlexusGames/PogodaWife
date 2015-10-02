@@ -52,7 +52,7 @@ public class HttpQuery {
 	}
 	
 	
-	public  ArrayList <Forecast> fetchWeather() {
+	public  ArrayList <Forecast> fetchWeather(int idWidget) {
 		ArrayList <Forecast> items = new ArrayList <Forecast>();
 		try {
 			String xmlString = getUrl(HTTP_ADRESS);
@@ -61,7 +61,7 @@ public class HttpQuery {
 			XmlPullParser parser = factory.newPullParser();
 			parser.setInput(new StringReader(xmlString));
 			
-			parseItems(items, parser);
+			parseItems(items, parser, idWidget);
 		} catch (IOException e) {
 			Log.e(TAG, "Failed to fetch items", e);
 		} catch (XmlPullParserException e) {
@@ -69,7 +69,7 @@ public class HttpQuery {
 		}
 		return items;
 	}
-	void parseItems(ArrayList<Forecast> items, XmlPullParser parser)
+	void parseItems(ArrayList<Forecast> items, XmlPullParser parser, int idWidget)
 			throws XmlPullParserException, IOException{
 		int eventType = parser.next();
 		
@@ -79,7 +79,7 @@ public class HttpQuery {
 				eventType = parser.next();
 				if (eventType == XmlPullParser.TEXT) {
 					String currentTemperature = parser.getText();
-					Forecast item = new Forecast();
+					Forecast item = new Forecast(idWidget);
 					item.setCurrentTemperature(currentTemperature);
 					/*item.setMaxTemperature(maxTemperature);*/
 					

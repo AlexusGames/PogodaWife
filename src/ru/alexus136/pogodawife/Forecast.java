@@ -2,6 +2,10 @@ package ru.alexus136.pogodawife;
 
 public class Forecast {
 
+	private int mWidgetId;
+	
+	
+	
 	private String mDay;
 	private String mMonth;
 	private String mWeekday;
@@ -10,6 +14,17 @@ public class Forecast {
 	private String mCurrentTemperature;
 	private String mMinTemperature;
 	private String mMaxTemperature;
+	
+	
+	public Forecast(int id) {
+		mWidgetId = id;
+	}
+	
+	
+	public int getWidgetId() {
+		return mWidgetId;
+	}
+	
 	public String getDay() {
 		return mDay;
 	}
